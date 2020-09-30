@@ -52,7 +52,11 @@ public class App {
         System.out.println("Damaged: " + car2.damaged);
         System.out.println("Door count: " + car2.doorCount);
         System.out.println("Color " + car2.color);
-        
+
+        double distanceForCar1 = carReference.accelerate(60, 1);
+
+        double distanceForCar2 = car2.accelerate(100, 1);
+
 
     }
 }
