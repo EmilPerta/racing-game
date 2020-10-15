@@ -3,9 +3,11 @@ package org.fasttrackit;
 public class Mechanic {
     public  void repair(Autovehicle autovehicle) {
 
-        autovehicle.engine = new Engine();
+        autovehicle.setEngine(new Engine());
 
-        autovehicle.damaged = false;
+        autovehicle.setDamaged(false);
+
+        autovehicle.setTotalTraveledDistance(autovehicle.getTotalTraveledDistance() - 100);
 
     }
 }

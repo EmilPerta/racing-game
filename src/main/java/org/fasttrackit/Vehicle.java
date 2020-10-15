@@ -1,26 +1,40 @@
 package org.fasttrackit;
 
+
+//import java.time.LocalDate;
+
 public class Vehicle {
-    String name;
-    double fuelLevel;
-    double mileage;
-    double totalTraveledDistance;
-    double maxSpeed;
 
-    boolean damaged;
-    String color;
+    //   class variable (static variable)
+    private static int totalVehicleCount;
 
-       public double accelerate(double speed, double durationInHours) {
+    //    instance variable.
+    private String name;
+    private double fuelLevel;
+    private double mileage;
+    private double totalTraveledDistance;
+    private double maxSpeed;
 
-        if (fuelLevel <= 0  || damaged){
+    private boolean damaged;
+    private String color;
+
+   // private LocalDate manufacturingDate = LocalDate.now();
+
+    public Vehicle() {
+        totalVehicleCount++;
+    }
+
+    public double accelerate(double speed, double durationInHours) {
+
+        if (fuelLevel <= 0 || damaged) {
             System.out.println("You cannot accelerate.");
             return 0;
         }
-
-        if (speed > maxSpeed){
+        //       local variable.
+        if (speed > maxSpeed) {
             System.out.println("Max speed exceeded.");
             return 0;
-        } else if (speed == maxSpeed){
+        } else if (speed == maxSpeed) {
             System.out.println("Careful, max speed reached.");
         } else {
             System.out.println("Valid speed entered.");
@@ -34,7 +48,7 @@ public class Vehicle {
         System.out.println("Total traveled distance for vehicle " + name + ": " + totalTraveledDistance);
 
         double mileageMultiplier = 1;
-        if (speed > 120){
+        if (speed > 120) {
             mileageMultiplier = speed / 100;
         }
         double usedFuel = distance * mileage * mileageMultiplier / 100;
@@ -42,5 +56,76 @@ public class Vehicle {
         System.out.println("Remaining fuel for vehicle " + name + ": " + fuelLevel);
 
         return distance;
+    }
+
+    public void setName(String name) {
+
+        this.name = name.trim(); // trim sterge spatiile de la inceputul si sfarsitul String-ului
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getFuelLevel() {
+        return fuelLevel;
+    }
+
+    public void setFuelLevel(double fuelLevel) {
+        this.fuelLevel = fuelLevel;
+    }
+
+    public double getMileage() {
+        return mileage;
+    }
+
+    public void setMileage(double mileage) {
+        this.mileage = mileage;
+    }
+
+    public double getTotalTraveledDistance() {
+        return totalTraveledDistance;
+    }
+
+    public void setTotalTraveledDistance(double totalTraveledDistance) {
+        this.totalTraveledDistance = totalTraveledDistance;
+    }
+
+    public double getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    public void setMaxSpeed(double maxSpeed) {
+        this.maxSpeed = maxSpeed;
+    }
+
+    public boolean isDamaged() {
+        return damaged;
+    }
+
+    public void setDamaged(boolean damaged) {
+        this.damaged = damaged;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+//    public LocalDate getManufacturingDate() {
+//        return manufacturingDate;
+//    }
+
+  //  public void setManufacturingDate(LocalDate manufacturingDate) {
+  //      this.manufacturingDate = manufacturingDate;
+   // }
+
+    // read-only property(nu are setter) (daca ar fi avut doar setter
+// ar fi fost write-only)
+    public static int getTotalVehicleCount() {
+        return totalVehicleCount;
     }
 }
