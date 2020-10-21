@@ -1,7 +1,7 @@
-package org.fasttrackit;
+package org.fasttrackit.vehicles;
 
 
-//import java.time.LocalDate;
+import java.time.LocalDate;
 
 public class Vehicle {
 
@@ -12,13 +12,14 @@ public class Vehicle {
     private String name;
     private double fuelLevel;
     private double mileage;
-    private double totalTraveledDistance;
+    // protected ne confera acces la variabila din intregul pachet din care face parte si toate subclasele.
+    protected double totalTraveledDistance;
     private double maxSpeed;
 
     private boolean damaged;
     private String color;
 
-   // private LocalDate manufacturingDate = LocalDate.now();
+    private LocalDate manufacturingDate = LocalDate.now();
 
     public Vehicle() {
         totalVehicleCount++;
@@ -115,13 +116,14 @@ public class Vehicle {
         this.color = color;
     }
 
-//    public LocalDate getManufacturingDate() {
-//        return manufacturingDate;
-//    }
+    public LocalDate getManufacturingDate() {
+        return manufacturingDate;
+    }
 
-  //  public void setManufacturingDate(LocalDate manufacturingDate) {
-  //      this.manufacturingDate = manufacturingDate;
-   // }
+    public void setManufacturingDate(LocalDate manufacturingDate) {
+        this.manufacturingDate = manufacturingDate;
+        System.out.println(getManufacturingDate());
+    }
 
     // read-only property(nu are setter) (daca ar fi avut doar setter
 // ar fi fost write-only)

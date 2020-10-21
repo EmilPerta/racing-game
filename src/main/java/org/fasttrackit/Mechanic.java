@@ -1,5 +1,7 @@
 package org.fasttrackit;
 
+import org.fasttrackit.vehicles.Autovehicle;
+
 public class Mechanic {
     public  void repair(Autovehicle autovehicle) {
 
