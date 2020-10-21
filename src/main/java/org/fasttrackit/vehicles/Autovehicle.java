@@ -14,6 +14,10 @@ public class Autovehicle extends  Vehicle {
     public void setEngine(Engine engine) {
         this.engine = engine;
     }
+    // constructor overloading (fiecare autovehicol primeste un motor implicit care nu mai trebuie declarat)
+    public Autovehicle(){
+        engine = new Engine();
+    }
 
     public Autovehicle(Engine engine){
         this.engine = engine;

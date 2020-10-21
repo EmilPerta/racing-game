@@ -1,11 +1,27 @@
 package org.fasttrackit;
 
 
+import org.fasttrackit.vehicles.Autovehicle;
+import org.fasttrackit.vehicles.Car;
+
 public class App {
     public static void main(String[] args) {
         Game game = new Game();
         game.start();
-
+//      // Examples of invoking overloaded methods and constructors
+//        Engine engine = new Engine();
+//        engine.setManufacturer("Renault");
+//        engine.setCapacity(1400);
+//
+//        Autovehicle autovehicle = new Autovehicle(engine);
+//
+//        Autovehicle autovehicle2 = new Autovehicle();
+//
+//        new Car();
+//
+//        autovehicle.accelerate(100);
+//        autovehicle.accelerate(100, 3);
+//       //**********************************************
 
 //        Engine engine1 = new Engine();
 //        engine1.setManufacturer("Ferrari");
