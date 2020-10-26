@@ -3,11 +3,17 @@ package org.fasttrackit;
 
 import org.fasttrackit.vehicles.Autovehicle;
 import org.fasttrackit.vehicles.Car;
+import org.fasttrackit.vehicles.cheater.CheatingVehicle;
 
 public class App {
     public static void main(String[] args) {
-        Game game = new Game();
-        game.start();
+//        Game game = new Game();
+//        game.start();
+
+        CheatingVehicle cheatingVehicle = new CheatingVehicle();
+        cheatingVehicle.setName("Cheater");
+        cheatingVehicle.accelerate(60,1);
+
 //      // Examples of invoking overloaded methods and constructors
 //        Engine engine = new Engine();
 //        engine.setManufacturer("Renault");
