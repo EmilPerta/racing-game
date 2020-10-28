@@ -18,9 +18,8 @@ public class CheatingVehicle extends Vehicle {
 
     }
 
-    protected CheatingVehicle reset() {
+    protected CheatingVehicle reset(){
         super.reset();
-
         return this;
     }
 }
