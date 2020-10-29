@@ -17,6 +17,9 @@ public class Game {
 
         initializeTrack();
 
+        Track selectedTrack = getSelectedTrackFromUser();
+        System.out.println("Seleted track: " + selectedTrack.getName());
+
         int playerCount = getPlayerCountFromUser();
         System.out.println("Numbers of players: " + playerCount);
 
@@ -50,11 +53,19 @@ public class Game {
         displayTracks();
     }
     private void displayTracks(){
+
+        System.out.println("Available tracks");
+
         for (int i = 0; i < tracks.length; i++) {
             if (tracks[i] != null) {
                 System.out.println((i + 1) + ". " + tracks[i].getName() + ": " + tracks[i].getLength());
             }
         }
+    }
+    private Track getSelectedTrackFromUser(){
+        System.out.println("Pleas select a track: ");
+        int trackNumber = ScannerUtils.nextIntAndMoveToNextLine();
+        return tracks[trackNumber - 1];
     }
 
 }
